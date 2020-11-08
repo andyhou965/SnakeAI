@@ -274,6 +274,7 @@ class Snake(Individual):
             of the snake will begin pointing that way.
         """        
         head = self.start_pos
+        snake = None
         # Body is below
         if starting_direction == 'u':
             snake = [head, Point(head.x, head.y + 1), Point(head.x, head.y + 2)]
@@ -313,6 +314,7 @@ class Snake(Individual):
         # Find next position
         # tail = self.snake_array.pop()  # Pop tail since we can technically move to the tail
         head = self.snake_array[0]
+        next_pos = None
         if direction == 'u':
             next_pos = Point(head.x, head.y - 1)
         elif direction == 'd':
